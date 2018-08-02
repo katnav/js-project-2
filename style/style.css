@@ -5,13 +5,13 @@ body {
 	font-size: 16px;
 }
 
-table#invoice {
+table#invoiceDetails, table#totals {
 	width: 80%;
 	margin: 0 auto;
 	border-collapse: collapse;
 }
 
-table#invoice th {
+table#invoiceDetails th, table#totals th {
 	padding: 10px;
 	background-color: #222;
 	color: #fff;
@@ -19,43 +19,43 @@ table#invoice th {
 
 
 
-table#invoice input {
+table#invoiceDetails input, table#totals input {
 	padding: 5px;
 }
 
-table#invoice tr.item td {
+table#invoiceDetails tr.item td , table#totals tr.item td {
 	padding: 10px;
 	border-bottom: 1px solid #eee;
 
 }
 
-table#invoice tr.item td:first-child {
+table#invoiceDetails tr.item td:first-child, table#totals tr.item td:first-child {
 	width: 50%;
 	padding-left: 0;
 }
 
-table#invoice tr.item td:nth-child(2) {
+table#invoiceDetails tr.item td:nth-child(2), table#totals tr.item td:nth-child(2) {
 	width: 20%;
 }
 
-table#invoice tr.item td:nth-child(3) {
+table#invoiceDetails tr.item td:nth-child(3) , table#totals tr.item td:nth-child(3) {
 	width: 10%;
 }
 
-table#invoice tr.item td:last-child {
+table#invoiceDetails tr.item td:last-child , table#totals tr.item td:last-child {
 	width: 20%;
 	padding-right: 0;
 	text-align: right;
 
 }
 
-table#invoice tr.item td input {
+table#invoiceDetails tr.item td input, table#totals tr.item td input {
 	width: 100%;
 	font-size: 1em;
 
 }
 
-table#invoice tr.item td:nth-child(2) input{
+table#invoiceDetails tr.item td:nth-child(2) input, table#totals tr.item td:nth-child(2) input{
 	width: 85%;
 	margin-left: 5px;
 }

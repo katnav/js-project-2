@@ -5,6 +5,9 @@
 
 
 $(document).ready(function() {
+
+
+
 $('form').on('mouseup keyup', 'input[type=number]', () => calculateItemPrice());
 
     function calculateItemPrice() {
@@ -18,15 +21,15 @@ $('form').on('mouseup keyup', 'input[type=number]', () => calculateItemPrice());
     };
 
 
+$('.addItem').click(function(e) {
+    e.preventDefault();
+        const newItem = "<tr class='item'><td><input placeholder='Enter item description' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice'></td> <td><input type='number' name='itemQty'></td> <td class='itemPrice'></td> </tr>";
+        $('table#invoiceDetails').append(newItem);
+    });
 
 });
 
-$('.addItem').click(function() {
-        // const itemName = $('input[name=itemName').val();
-        // const itemQty = $('input[name=itemNQty').val();
-        const newItem = "<tr class='item'><td><input placeholder='Enter item description' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice'></td> <td><input type='number' name='itemQty'></td> <td class='itemPrice'></td> </tr>";
-        $('tbody').append(newItem);
-    });
+
 
 function formatCurrency(amount) {
     return `$${Number(amount).toFixed(2)}`;
