@@ -4,8 +4,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
 
+
 	</head>
-	<body>
+	<body><form>
 		<table id="invoice">
 			<tr>
 				<th>Item</th>
@@ -13,32 +14,43 @@
 				<th>Quantity</th>
 				<th>Price</th>
 			</tr>
+			<tbody>
 			<tr class="item">
-				<td><input placeholder="Enter item description"/></td>
-				<td>$<input type="number"></td>
-				<td><input type="number"></td>
-				<td></td>
+				<td><input placeholder="Enter item description" name="itemName" autofocus></td>
+				<td>$<input type="number" name="itemUnitPrice"></td>
+				<td><input type="number" name="itemQty"></td>
+				<td class="itemPrice"></td>
 			</tr>
 			<tr>
-				<td><button>Add Item</button></td>
+				<td><button class="addItem">Add Item</button></td>
 				<td></td>
 				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td class="taxLabel">Tax</td>
 				<td></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td></td>
-				<td class="totalLabel">Total</td>
+				<td class="labelSubtotal">SubTotal</td>
 				<td></td>
 			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="labelTax">Tax</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="labelTotal">Total</td>
+				<td></td>
+			</tr>
+		</tbody>
 
 		</table>
-
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="scripts/main.js"></script>
 	</body>
+
 </html>
