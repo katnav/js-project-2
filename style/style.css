@@ -5,41 +5,51 @@ body {
 	font-size: 16px;
 }
 
-table#invoiceDetails, table#totals {
+table#invoice-details, table#totals {
 	width: 80%;
 	margin: 0 auto;
 	border-collapse: collapse;
 }
 
-table#invoiceDetails th, table#totals th {
+table#totals {
+	font-size: 1.3em;
+}
+
+table#invoice-details th, table#totals th {
 	padding: 10px;
 	background-color: #222;
 	color: #fff;
 }
 
+table#invoice-details th:nth-child(4){
+	text-align:right;
+}
 
-
-table#invoiceDetails input, table#totals input {
+table#invoice-details input, table#totals input {
 	padding: 5px;
 }
 
-table#invoiceDetails tr.item td , table#totals tr.item td {
+table#invoice-details tr.item td , table#totals tr.item td {
 	padding: 10px;
 	border-bottom: 1px solid #eee;
 
 }
 
-table#invoiceDetails tr.item td:first-child, table#totals tr.item td:first-child {
-	width: 50%;
+table#invoice-details tr.item td:first-child, table#totals tr.item td:first-child {
+	width: 47%;
 	padding-left: 0;
 }
 
-table#invoiceDetails tr.item td:nth-child(2), table#totals tr.item td:nth-child(2) {
+table#invoice-details tr.item td:nth-child(2), table#totals tr.item td:nth-child(2) {
 	width: 20%;
 }
 
-table#invoiceDetails tr.item td:nth-child(3) , table#totals tr td:nth-child(3) {
+table#invoice-details tr.item td:nth-child(3) , table#totals tr td:nth-child(3) {
 	width: 10%;
+}
+
+table#totals tr td:nth-child(3) {
+	text-align: right;
 }
 
 table#totals tr td:nth-child(2) {
@@ -47,20 +57,26 @@ table#totals tr td:nth-child(2) {
 	text-align: right;
 }
 
-table#invoiceDetails tr.item td:last-child , table#totals tr td:last-child {
+table#invoice-details tr.item td:nth-child(4) , table#totals tr td:nth-child(4) {
 	width: 20%;
 	padding-right: 0;
 	text-align: right;
 
 }
+table#invoice-details tr.item td:last-child , table#totals tr td:last-child {
+	width: 3%;
+	padding-right: 0;
+	text-align: right;
 
-table#invoiceDetails tr.item td input, table#totals tr.item td input {
+}
+
+table#invoice-details tr.item td input, table#totals tr.item td input {
 	width: 100%;
 	font-size: 1em;
 
 }
 
-table#invoiceDetails tr.item td:nth-child(2) input, table#totals tr.item td:nth-child(2) input{
+table#invoice-details tr.item td:nth-child(2) input, table#totals tr.item td:nth-child(2) input{
 	width: 85%;
 	margin-left: 5px;
 }
@@ -76,14 +92,15 @@ input[type=submit] {
 	line-height: 2em;
 	padding-right: 20px;
 	padding-left: 20px;
-	font-size: .86em;
+	font-size: .66em;
 	color: #fff;
 	margin-top: 10px;
 }
 
-/*.text-right {text-align: right;}*/
 
-/*table#invoice tr.item td:nth-child(2)::before {
-	content: '$';
-}*/
+/*row background color does not work*/
+tr.item.selected {
+	background-color: #eee;
+}
+
 
