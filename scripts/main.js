@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 
+
     $('.add-item').on('click', function(e) {
         e.preventDefault();
 
@@ -9,7 +10,9 @@ $(document).ready(function() {
 
     $("#invoice-details").on('click', '.delete', function() {
         $(this).closest('tr').remove();
+
         calculateTotals();
+
     });
 
     const formatCurrency = (amount) => {
@@ -21,14 +24,13 @@ $(document).ready(function() {
 
 
     $('.add-item').on('click', () => {
-        let newItem = "<tr class='item'><td><input placeholder='Item Name' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>";
+        let newItem = "<tr class='item new-item'><td><input placeholder='Item Name' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>";
         $(newItem).find('input[name=itemPrice]').val('');
         //$('#invoice-details').append([newItem]);
         $('#invoice-details tr').eq(-4).before([newItem]);
         $('input[name=itemName]').focus();
 
     });
-
 
     //calculate row price as you input value
     $('#invoice-details').on('mouseup keyup', 'input[type=number]', () => calculateTotals());

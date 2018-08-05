@@ -31,8 +31,9 @@ header {
 
 .customer-info {
 	float: right;
-
+	text-align: right;
 }
+
 
 /*.customer-info p {
 	-webkit-margin-before: .75em;
@@ -50,6 +51,49 @@ header {
 .invoice-title {
 	font-size: 2em;
 	margin-bottom: 5px;
+}
+
+.invoice-title textarea{
+	padding: 0;
+	border: 0;
+	margin-bottom: -8px;
+	text-align: right;
+	/*margin-bottom: 5px;*/
+}
+
+textarea {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1em;
+	resize: none;
+
+
+}
+
+textarea#customer-name {
+	font-weight: bold;
+}
+
+textarea#invoice-date, textarea#customer-name, textarea#customer-address-1, textarea#customer-address-2, textarea#due-date  {
+	border: 0;
+	padding: 0;
+	margin-top: 10px;
+	display: block;
+	text-align: right;
+}
+
+textarea#customer-address-1, textarea#customer-address-2{
+	margin-top: 0;
+}
+
+textarea#due-date {
+	background-color: transparent;
+	text-align: center;
+	margin-top: 0;
+	color: #fdf5e6;
+}
+
+textarea#due-date::-webkit-input-placeholder {
+	color: #555;
 
 }
 
@@ -66,7 +110,7 @@ header {
 .due-date {
 	float: right;
 	/*margin-top: 10px;*/
-	text-align: left;
+	text-align: center;
 	padding: 14px 20px;
 	background-color: #898c26;
 }
@@ -143,6 +187,7 @@ table#invoice-details th {
 	color: #fdf5e6;
 }
 
+
 table#invoice-details th:nth-child(4){
 	text-align:right;
 }
@@ -200,13 +245,11 @@ table#invoice-details tr.item td:last-child  {
 /*inputs*/
 
 
-
 table#invoice-details tr.item td input {
 	width: 100%;
 	font-size: 1em;
 
 }
-
 
 
 table#invoice-details tr.item td:nth-child(2) input{
@@ -253,15 +296,11 @@ table#invoice-details tr.item td input[name=itemQty] {
 	text-align: center;
 }
 
-/*row background color does not work*/
-tr.item.selected {
-	background-color: #eee;
-}
-
 
 .subtotal, .tax-amount, .total {
 	text-align: right;
 }
 
 .clear {clear:both;}
+
 
