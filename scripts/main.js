@@ -2,19 +2,12 @@
 
 $(document).ready(function() {
 
-    //add a new row when button (.addItem) is clicked
+
     $('.add-item').on('click', function(e) {
         e.preventDefault();
 
 });
 
-// row background color does not work
-//     $('#invoice-details tr').on('click', function(e) {
-//         $('#invoice-details tr').removeClass('selected');
-//     $(this).addClass('selected');
-// });
-
-//delete row
 
 $("#invoice-details").on('click','.delete',function(){
        $(this).closest('tr').remove();
@@ -30,9 +23,10 @@ function formatCurrency(amount) {
 };
 
 $('.add-item').on('click', () => {
-        let newItem = "<tr class='item'><td><input placeholder='Item Name' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='$0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>";
+        let newItem = "<tr class='item'><td><input placeholder='Item Name' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>";
         $(newItem).find('input[name=itemPrice]').val('');
-        $('#invoice-details').append([newItem]);
+        //$('#invoice-details').append([newItem]);
+        $('#invoice-details tr').eq(-1).before([newItem]);
         $('input[name=itemName]').focus();
 
     });
@@ -51,11 +45,12 @@ $('#invoice-details').on('mouseup keyup', 'input[type=number]', () => calculateT
         let subtotal = itemPrices.reduce((a, v) => a + Number(v), 0);
         $('.subtotal').text(formatCurrency(subtotal));
 
-        const tax = .13;
+        let tax = $('input[name=taxRate]').val() / 100;
         let taxAmount = subtotal * tax;
         let total = subtotal + taxAmount;
         $('.tax-amount').text(formatCurrency(taxAmount));
         $('.total').text(formatCurrency(total));
+        $('.amount-due').text(formatCurrency(total));
 
         return subtotal;
         return taxAmount;

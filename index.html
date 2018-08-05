@@ -1,65 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
-  	<link rel="stylesheet" href="style/style2.css">
-
-
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+		<link rel="stylesheet" href="style/style.css">
 	</head>
-	<body><form>
-		<table id="invoice-details">
-			<thead>
-			<tr>
-				<th>Item</th>
-				<th>Unit Price</th>
-				<th>Quantity</th>
-				<th>Price</th>
-				<th></th>
-			</tr>
-		</thead>
-			<tbody>
-			<tr class="item">
-				<td><input placeholder="Item Name" name="itemName" autofocus></td>
-				<td>$<input type="number" name="itemUnitPrice" placeholder="0.00" min="0"></td>
-				<td><input type="number" name="itemQty" value="1" min="0"></td>
-				<td class="item-price">$0.00</td>
-				<td></td>
-			</tr>
+	<body>
+		<div class="container">
+			<header>
+				<div class="company-info">
+					<!-- <img src="http://via.placeholder.com/200x100"><br/> -->
+					<div class="logo"><img src="images/logo.png" alt="the potting shed logo"/></div>
 
-		</tbody>
+					<p>
+						<b>The Potting Shed</b><br/>
+						2380 Pea Gravel Lane<br/>
+						Oakville, ON M5J 2R8<br/>
+						CANADA<br/>
+						416-416-4164
+					</p>
+				</div>
+				<div class="invoice-info">
+					<div class="invoice-title">invoice<div>August 10, 2018</div></div>
 
+					<div class="invoice-amount">
+					<div class="amount-due">$0.00</div>
+					<div class="due-date">Amount due on<br/>August 30, 2018</div>
+
+				</div>
+				</div>
+
+
+			</header>
+			<table id="invoice-details">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Unit Cost</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="item">
+						<td><input placeholder="Item Name" name="itemName" s autofocus></td>
+						<td>$ <input type="number" name="itemUnitPrice" placeholder="0.00" min="0"></td>
+						<td><input type="number" name="itemQty" value="1" min="0"></td>
+						<td class="item-price">$0.00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><div style="float: left; border: 1px solid #555; margin-top: 20px;padding: 20px; width: 100px">Tax Rate<input type="number" name="taxRate" value="13" min="0" style="display: block; width: 100%; height: 50px; font-size: 24px; text-align: center; border: 0; border-bottom: 3px solid #CCC; background-color: transparent;"/></div><div style="float: left"><input type="submit" class="add-item" value=" Add Item "/></div></td>
+						<td colspan="2" style="text-align: right">
+							SubTotal<br/>
+							Tax<br/>
+							<span style="font-size: 1.6em">Total</span>
+						</td>
+						<td><div class="subtotal">$0.00</div>
+						<div class="tax-amount">$0.00</div>
+					<div class="total">$0.00</div</td>
+					<td></td>
+				</tr>
+			</tbody>
 		</table>
-		<table id="totals">
-			<tr>
-				<td><input type="submit" class="add-item" value=" Add Item "/></td>
-				<td colspan="2"></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2" class="lbl-subtotal">SubTotal</td>
-				<td class="subtotal">$0.00</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2" class="lbl-tax">Tax (13%)</td>
-				<td class="tax-amount">$0.00</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2" class="lbl-total">Total</td>
-				<td class="total">$0.00</td>
-				<td></td>
-			</tr>
-		</table>
-</form>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="scripts/main-v2.js"></script>
-	</body>
-
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="scripts/main.js"></script>
+</body>
 </html>
