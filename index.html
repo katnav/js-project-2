@@ -10,7 +10,7 @@
 		<div class="container">
 			<header>
 				<div class="company-info">
-					<!-- <img src="http://via.placeholder.com/200x100"><br/> -->
+
 					<div class="logo"><img src="images/logo.png" alt="the potting shed logo"/></div>
 
 					<p>
@@ -22,15 +22,18 @@
 					</p>
 				</div>
 				<div class="invoice-info">
-					<div class="invoice-title">invoice<div>August 10, 2018</div></div>
-
+					<div class="invoice-title">Invoice No: 0005</div>
 					<div class="invoice-amount">
-					<div class="amount-due">$0.00</div>
-					<div class="due-date">Amount due on<br/>August 30, 2018</div>
+						<div class="amount-due">$0.00</div>
+						<div class="due-date">Amount due on<br/>August 30, 2018</div>
+					</div>
+					<div class="clear"></div>
 
+					<div class="customer-info">
+						<p>August 10, 2018</p>
+						<p>Rafiki Brown<br/>2800 Colonel William Parkway<br/>Oakville, ON L6M 0J9 Canada </p>
+					</div>
 				</div>
-				</div>
-
 
 			</header>
 			<table id="invoice-details">
@@ -45,24 +48,37 @@
 				</thead>
 				<tbody>
 					<tr class="item">
-						<td><input placeholder="Item Name" name="itemName" s autofocus></td>
+						<td><input placeholder="Item" name="itemName" autofocus></td>
 						<td>$ <input type="number" name="itemUnitPrice" placeholder="0.00" min="0"></td>
-						<td><input type="number" name="itemQty" value="1" min="0"></td>
+						<td><input type="number" name="itemQty" min="0"></td>
 						<td class="item-price">$0.00</td>
 						<td></td>
 					</tr>
-					<tr>
-						<td><div style="float: left; border: 1px solid #555; margin-top: 20px;padding: 20px; width: 100px">Tax Rate<input type="number" name="taxRate" value="13" min="0" style="display: block; width: 100%; height: 50px; font-size: 24px; text-align: center; border: 0; border-bottom: 3px solid #CCC; background-color: transparent;"/></div><div style="float: left"><input type="submit" class="add-item" value=" Add Item "/></div></td>
-						<td colspan="2" style="text-align: right">
-							SubTotal<br/>
-							Tax<br/>
-							<span style="font-size: 1.6em">Total</span>
+					 <tr>
+						<td>
+							<div class="tax-rate-box">Tax Rate (%)<input type="number" name="taxRate" value="13" min="0" /></div><div style="float:"><input type="submit" class="add-item" value=" Add Item "/></div>
 						</td>
-						<td><div class="subtotal">$0.00</div>
-						<div class="tax-amount">$0.00</div>
-					<div class="total">$0.00</div</td>
-					<td></td>
+						<td colspan="3">
+							<table id="totals">
+							<tr>
+								<td>Subtotal</td>
+								<td class="subtotal">$0.00</td>
+							</tr>
+							<tr>
+								<td>Tax</td>
+								<td class="tax-amount">$0.00</td>
+							</tr>
+							<tr>
+								<td>Total</td>
+								<td class="total">$0.00</td>
+							</tr>
+						</table>
+						</td>
+						<td></td>
+
+
 				</tr>
+
 			</tbody>
 		</table>
 	</div>

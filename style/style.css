@@ -20,6 +20,7 @@ body {
 }
 
 header {
+	width: 100%;
 	margin-bottom: 20px;
 }
 
@@ -27,6 +28,16 @@ header {
 	width: 35%;
 	float: left;
 }
+
+.customer-info {
+	float: right;
+
+}
+
+/*.customer-info p {
+	-webkit-margin-before: .75em;
+    -webkit-margin-after: .75em;
+}*/
 
 .invoice-info {
 	width: 65%;
@@ -37,7 +48,9 @@ header {
 }
 
 .invoice-title {
-	font-size: 3em;
+	font-size: 2em;
+	margin-bottom: 5px;
+
 }
 
 .invoice-title div {
@@ -46,14 +59,22 @@ header {
 }
 
 .invoice-amount {
-	margin-top: 35px;
+	display: block;
 	color: #fdf5e6;
+}
+
+.due-date {
+	float: right;
+	/*margin-top: 10px;*/
+	text-align: left;
+	padding: 14px 20px;
+	background-color: #898c26;
 }
 
 .amount-due {
 	float: right;
-	margin-top: 10px;
-	font-size:3em;
+	/*margin-top: 10px;*/
+	font-size:2.4em;
 	padding: 10.5px;
 	background-color: #666a2b;
 }
@@ -62,17 +83,33 @@ header {
 	font-size: 16px;
 }
 
-.due-date {
-	float: right;
-	margin-top: 10px;
-	text-align: left;
-	padding: 20px;
-	background-color: #898c26;
-}
+
 
 .fas {
 	color: #9c040e;
 }
+
+.tax-rate-box {
+	float: left;
+	border: 1px solid #353230;
+	margin-top: 20px;
+	padding: 20px;
+	width: 140px;
+	text-align: center;
+}
+
+.tax-rate-box input {
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 24px;
+	text-align: center;
+	border: 0;
+	border-bottom: 3px solid #CCC;
+	background-color: transparent;
+}
+
+/*tables*/
 
 
 
@@ -83,9 +120,24 @@ table#invoice-details, table#totals {
 
 table#totals {
 	font-size: 1.3em;
+	text-align: right;
 }
 
-table#invoice-details th, table#totals th {
+table#totals tr:last-child {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-top: 20px;
+}
+
+table#totals tr td:last-child {
+	width: 60%;
+}
+
+table#totals tr:last-child td {
+	padding-top: 20px;
+}
+
+table#invoice-details th {
 	padding: 10px;
 	background-color: #353230;
 	color: #fdf5e6;
@@ -96,54 +148,60 @@ table#invoice-details th:nth-child(4){
 }
 
 
-table#invoice-details input, table#totals input {
+table#invoice-details input {
 	padding: 10px 5px;
 }
 
 
 
-table#invoice-details tr.item td , table#totals tr.item td {
+table#invoice-details tr.item td {
 	padding: 10px;
 	height: 100px;
 
 }
 
-table#invoice-details tr.item td:first-child, table#totals tr.item td:first-child {
-	width: 52%;
+/*item name*/
+table#invoice-details tr.item td:first-child {
+	width: 60%;
 	padding-left: 0;
 }
 
-table#invoice-details tr.item td:nth-child(2), table#totals tr.item td:nth-child(2) {
-	width: 20%;
+/*item price*/
+table#invoice-details tr.item td:nth-child(2) {
+	width: 17%;
 }
 
-table#invoice-details tr.item td:nth-child(3) , table#totals tr td:nth-child(3) {
+/*item unit price*/
+table#invoice-details tr.item td:nth-child(3) {
 	width: 10%;
 }
 
-table#totals tr td:nth-child(3) {
-	text-align: right;
-}
-
-table#totals tr td:nth-child(2) {
-	width: 40%;
-	text-align: right;
-}
-
-table#invoice-details tr.item td:nth-child(4) , table#totals tr td:nth-child(4) {
-	width: 15%;
+/*item row price*/
+table#invoice-details tr.item td:nth-child(4) {
+	width: 10%;
 	padding-right: 0;
 	text-align: right;
-
 }
-table#invoice-details tr.item td:last-child , table#totals tr td:last-child {
+
+/*delete*/
+table#invoice-details tr.item td:last-child  {
 	width: 3%;
 	padding-right: 0;
 	text-align: right;
 
 }
 
-table#invoice-details tr.item td input, table#totals tr.item td input {
+/*table#invoice-details tr.item::after {
+	content: 'x';
+}*/
+.delete-pos { position: relative; }
+.delete2 { display: block; color: #000; text-decoration: none; position: absolute; background: #EEEEEE; font-weight: bold; padding: 0px 3px; border: 1px solid; top: -35px; left: -22px; font-family: Verdana; font-size: 12px; }
+
+/*inputs*/
+
+
+
+table#invoice-details tr.item td input {
 	width: 100%;
 	font-size: 1em;
 
@@ -151,7 +209,7 @@ table#invoice-details tr.item td input, table#totals tr.item td input {
 
 
 
-table#invoice-details tr.item td:nth-child(2) input, table#totals tr.item td:nth-child(2) input{
+table#invoice-details tr.item td:nth-child(2) input{
 	width: 85%;
 	margin-left: 5px;
 }
@@ -170,7 +228,15 @@ input[type=submit] {
 	font-size: .86em;
 	color: #fdf5e6;
 	margin: 20px 0 0 20px;
+	border: 0;
 }
+
+input[type=submit]:hover {
+	background-color: #c26d3d;
+}
+
+
+
 
 table#invoice-details tr.item td input[name=itemName] {
 	border: 0;
@@ -192,16 +258,10 @@ tr.item.selected {
 	background-color: #eee;
 }
 
-.invoice-container {
-
-}
 
 .subtotal, .tax-amount, .total {
 	text-align: right;
 }
 
-.total {
-	font-size: 1.6em;
-	font-weight: bold;
-}
+.clear {clear:both;}
 
