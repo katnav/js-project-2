@@ -4,7 +4,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
-		<link rel="stylesheet" href="style/style2.css">
+		<link rel="stylesheet" href="style/style.css">
 	</head>
 	<body>
 		<div class="container">
@@ -52,13 +52,16 @@
 					<tr class="item">
 						<td><input placeholder="Item" name="itemName" autofocus></td>
 						<td>$ <input type="number" name="itemUnitPrice" placeholder="0.00" min="0"></td>
-						<td><input type="number" name="itemQty" min="0"></td>
+						<td><input type="number" name="itemQty" min="0" placeholder="0"></td>
 						<td class="item-price">$0.00</td>
 						<td></td>
 					</tr>
 					 <tr>
 						<td>
-							<div class="tax-rate-box">Tax Rate (%)<input type="number" name="taxRate" value="13" min="0" /></div><div style="float:"><input type="submit" class="add-item" value=" Add Item "/></div>
+							<div class="tax-rate-box">Tax Rate (%)<input type="number" name="taxRate" value="13" min="0" /></div><div style="float:">
+								<!-- <input type="submit" class="add-item" value=" Add Item "/> -->
+								<button class="add-item">Add Item</button>
+							</div>
 						</td>
 						<td colspan="3">
 							<table id="totals">
