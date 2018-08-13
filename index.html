@@ -8,6 +8,7 @@
 	</head>
 	<body>
 		<div class="container">
+			<form>
 			<header>
 				<div class="company-info">
 
@@ -54,12 +55,11 @@
 						<td>$ <input type="number" name="itemUnitPrice" placeholder="0.00" min="0"></td>
 						<td><input type="number" name="itemQty" min="0" placeholder="0"></td>
 						<td class="item-price">$0.00</td>
-						<td></td>
+						<td><div class='delete'><i class='fas fa-minus-circle'></i><div></td>
 					</tr>
 					 <tr>
 						<td>
 							<div class="tax-rate-box">Tax Rate (%)<input type="number" name="taxRate" value="13" min="0" /></div><div style="float:">
-								<!-- <input type="submit" class="add-item" value=" Add Item "/> -->
 								<button class="add-item">Add Item</button>
 							</div>
 						</td>
@@ -86,8 +86,9 @@
 
 			</tbody>
 		</table>
+	</form>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="scripts/main-v2.js"></script>
+	<script src="scripts/main.js"></script>
 </body>
 </html>
