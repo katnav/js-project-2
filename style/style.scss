@@ -166,6 +166,10 @@ textarea#invoice-date {
 	color: #9c040e;
 }
 
+i.fa-eraser {
+	color: $base-font-color;
+}
+
 i.fa-pen {
 	color: $med-gray;
 	font-size: 11px;
@@ -271,7 +275,7 @@ table#invoice-details tr.item td {
 
 /*item name*/
 table#invoice-details tr.item td:first-child {
-	width: 60%;
+	width: 55%;
 	padding-left: 0;
 }
 
@@ -294,7 +298,7 @@ table#invoice-details tr.item td:nth-child(4) {
 
 /*delete*/
 table#invoice-details tr.item td:last-child  {
-	width: 3%;
+	width: 8%;
 	padding-right: 0;
 	text-align: right;
 
@@ -342,8 +346,6 @@ input[type=submit]:hover {
 }
 
 
-
-
 table#invoice-details tr.item td input[name=itemName] {
 	border: 0;
 	border-bottom: 2px solid $med-gray;
@@ -365,6 +367,14 @@ table#invoice-details tr.item td input[name=itemQty] {
 }
 
 .clear {clear:both;}
+
+.pull-right {
+	float: right
+}
+
+.reset {
+	margin-right: 10px;
+}
 
 
 

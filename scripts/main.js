@@ -6,7 +6,7 @@ $(document).ready(function() {
 
         //declare variable for new row
         let newItem = $(
-            "<tr class='item new-item'><td><input placeholder='Item' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>"
+            "<tr class='item new-item'><td><input placeholder='Item' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><span class='reset'><i class='fas fa-eraser'></i></span><span class='delete pull-right'><i class='fas fa-minus-circle'></i><span></td> </tr>"
         );
 
         //display new row with fadeIn animation
@@ -54,12 +54,20 @@ $(document).ready(function() {
 
 
 
-
+    // delete row and recalculate totals
     $('#invoice-details').on('click', '.delete', function() {
         $(this).closest('tr').remove();
         calculateTotals();
 
     });
+
+    // clear row values and recalculate totals
+    $('#invoice-details').on('click', '.reset', function() {
+        $(this).parents('tr').find('input').val('');
+        calculateTotals();
+
+    });
+
 
 
     //format currency with decimal and comma
