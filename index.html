@@ -34,9 +34,9 @@
 
 					<div class="customer-info"><i class="fas fa-pen inv-date"></i>
 						<textarea name="invoiceDate" id="invoice-date" cols="50" rows="1" placeholder="August 10, 2018"></textarea>
-						<textarea name="customerName" id="customer-name" cols="50" rows="1" placeholder="Rafiki Brown"></textarea>
-						<textarea name="customerAddress1" id="customer-address-1" cols="50" rows="1" placeholder="2800 Colonel William Parkway"></textarea>
-						<textarea name="customerAddress2" id="customer-address-2" cols="50" rows="1" placeholder="Oakville, ON L6M 0J9 Canada"></textarea>
+						<textarea name="customerName" id="customer-name" cols="50" rows="1" placeholder="Rafiki Brown"></textarea><i class="fas fa-pen inv-cname"></i>
+						<textarea name="customerAddress1" id="customer-address-1" cols="50" rows="1" placeholder="2800 Colonel William Parkway"></textarea><i class="fas fa-pen inv-caddress1"></i>
+						<textarea name="customerAddress2" id="customer-address-2" cols="50" rows="1" placeholder="Oakville, ON L6M 0J9 Canada"></textarea><i class="fas fa-pen inv-caddress2"></i>
 					</div>
 				</div>
 
@@ -61,9 +61,9 @@
 					</tr>
 					 <tr>
 						<td>
-							<div class="tax-rate-box">Tax Rate (%)<input type="number" name="taxRate" value="13" min="0" /><i class="fas fa-pen inv-tax"></i></div><div style="float:">
+							<div class="tax-rate-box">Tax Rate (%)<input id="tax-rate" type="number" name="taxRate" value="13" min="0"/><i class="fas fa-pen inv-tax"></i></div>
 								<button class="add-item">Add Item</button>
-							</div>
+
 						</td>
 						<td colspan="3">
 							<table id="totals">

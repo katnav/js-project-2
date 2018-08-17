@@ -15,7 +15,7 @@ $tertiary-lighter: lighten($tertiary, 5%);
 
 //neutrals
 $off-black: #222;
-$med-gray: #ccc;
+$med-gray: #aaa;
 $lt-gray: #eee;
 
 
@@ -53,6 +53,7 @@ header {
 .customer-info {
 	float: right;
 	text-align: right;
+	padding-top: 0;
 }
 
 .invoice-info {
@@ -97,9 +98,8 @@ textarea#invoice-date, textarea#customer-name, textarea#customer-address-1, text
 	text-align: right;
 }
 
-textarea#customer-address-1, textarea#customer-address-2{
-	margin-top: 0;
-}
+textarea#customer-address-1, textarea#customer-address-2 {
+  margin-top: -20px; }
 
 textarea#due-date {
 	background-color: transparent;
@@ -110,7 +110,26 @@ textarea#due-date {
 
 textarea#due-date::-webkit-input-placeholder {
 	color: #555;
+}
 
+::-webkit-input-placeholder { /* Chrome */
+  color: $med-gray;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $med-gray;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $med-gray;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: $med-gray;
+  opacity: 1;
+}
+
+
+textarea#invoice-date {
+	margin-top: 0;
 }
 
 .invoice-title div {
@@ -127,6 +146,7 @@ textarea#due-date::-webkit-input-placeholder {
 	float: right;
 	text-align: center;
 	padding: 14px 20px;
+	height: 70px;
 	background-color: $secondary-lighter;
 }
 
@@ -135,6 +155,7 @@ textarea#due-date::-webkit-input-placeholder {
 	font-size:2.4em;
 	padding: 10.5px;
 	background-color: $secondary;
+	height: 70px;
 }
 
 .amount-due span {
@@ -145,12 +166,44 @@ textarea#due-date::-webkit-input-placeholder {
 	color: #9c040e;
 }
 
+i.fa-pen {
+	color: $med-gray;
+	font-size: 11px;
+	position: relative;
+}
+
+i.fa-pen.inv-num{
+
+	right: -100px;
+	top: -15px;
+}
+
+i.fa-pen.inv-duedate{
+	right: -65px;
+	top: -23px;
+}
+
+i.fa-pen.inv-date{
+	right: -18px;
+	top: 16px;
+}
+
+i.fa-pen.inv-tax{
+	right: -45px;
+	top: -40px;
+}
+
+i.fa-pen.inv-cname, i.fa-pen.inv-caddress1, i.fa-pen.inv-caddress2 {
+  right: -18px;
+  top: -22px; }
+
+
 .tax-rate-box {
 	float: right;
 	border: 1px solid $primary;
 	margin-top: 10px;
-	padding: 15px;
-	width: 140px;
+	padding: 15px 15px 0 15px;
+	width: 120px;
 	text-align: center;
 }
 
@@ -312,6 +365,10 @@ table#invoice-details tr.item td input[name=itemQty] {
 }
 
 .clear {clear:both;}
+
+
+
+
 
 
 

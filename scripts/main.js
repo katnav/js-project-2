@@ -6,7 +6,7 @@ $(document).ready(function() {
 
         //declare variable for new row
         let newItem = $(
-            "<tr class='item new-item'><td><input placeholder='Item Name' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>"
+            "<tr class='item new-item'><td><input placeholder='Item' name='itemName' autofocus></td> <td>$<input type='number' name='itemUnitPrice' placeholder='0.00'></td> <td><input type='number' name='itemQty' placeholder='0'></td> <td class='item-price'>$0.00</td><td><div class='delete'><i class='fas fa-minus-circle'></i><div></td> </tr>"
         );
 
         //display new row with fadeIn animation
@@ -23,7 +23,39 @@ $(document).ready(function() {
     });
 
 
-    $("#invoice-details").on('click', '.delete', function() {
+    // set focus on textarea when edit icon is clicked
+    $('.invoice-info').on("mouseup", ".inv-num", function(e) {
+        $('#invoice-num').show().focus();
+    });
+
+    $('.invoice-info').on("mouseup", ".inv-duedate", function(e) {
+        $("#due-date").show().focus();
+    });
+
+    $('.customer-info').on("mouseup", ".inv-date", function(e) {
+        $('#invoice-date').show().focus();
+    });
+
+    $('.customer-info').on("mouseup", ".inv-cname", function(e) {
+        $("#customer-name").show().focus();
+    });
+
+    $('.customer-info').on("mouseup", ".inv-caddress1", function(e) {
+        $("#customer-address-1").show().focus();
+    });
+
+    $('.customer-info').on("mouseup", ".inv-caddress2", function(e) {
+        $("#customer-address-2").show().focus();
+    });
+
+    $('#invoice-details').on("mouseup", ".inv-tax", function(e) {
+        $("#tax-rate").show().focus();
+    });
+
+
+
+
+    $('#invoice-details').on('click', '.delete', function() {
         $(this).closest('tr').remove();
         calculateTotals();
 
@@ -81,7 +113,6 @@ $(document).ready(function() {
 
 
     };
-
 
 
 
